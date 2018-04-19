@@ -1,0 +1,20 @@
+.container .userEntry {
+  display: flex;
+  justify-content: center;
+}
+.container .userEntry .playerAddBtn {
+  height: 20px;
+  width: 30px;
+  background-color: green;
+  cursor: pointer;
+}
+.container .card {
+  display: flex;
+}
+.container .card .right {
+  display: flex;
+}
+.container .card .right .column {
+  border: 1px solid green;
+  padding: 10px;
+}
