@@ -1,33 +1,102 @@
+html {
+  background-color: #AFF4AE;
 
-.container {
+  .container {
+    .logoBox {
+      margin: 10px;
+      display: flex;
+      font-family: 'Shadows Into Light', cursive;
 
-  .userEntry{
-    display: flex;
-    justify-content: center;
 
-    .playersEntry{
-
-    }
-
-    .playerAddBtn{
-      height: 20px;
-      width: 30px;
-      background-color: green;
-      cursor: pointer;
-    }
-  }
-  .card {
-    display: flex;
-
-    .left {
+      .logo {
+        height: 100px;
+      }
 
     }
-    .right {
+    .userEntry {
+
+      .playersEntry {
+
+      }
+
+      .playerAddBtn {
+        height: 20px;
+        width: 30px;
+        background-color: green;
+        cursor: pointer;
+      }
+    }
+    .card {
       display: flex;
 
-      .column {
-        border: 1px solid green;
-        padding: 10px;
+      .left {
+        width: 125px;
+        margin-top: 50px;
+
+        .playerLabel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+
+          .playerName {
+
+          }
+          .trashPlayer {
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        background-color: white;
+
+        .column {
+          border: 1px solid green;
+          .colHeader {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 3px solid green;
+          }
+          .colScores {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Shadows Into Light', cursive;
+            border-bottom: 1px solid green;
+          }
+        }
+        .scoreCol {
+          width: 50px;
+          border: 1px solid green;
+          background-color: lightgreen;
+
+          .scoreColHead {
+            height: 50px;
+            border-bottom: 3px solid green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+          }
+          .total {
+            height: 50px;
+            border-bottom: 1px solid green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+          }
+        }
       }
     }
   }

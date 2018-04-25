@@ -1,20 +1,82 @@
-.container .userEntry {
-  display: flex;
-  justify-content: center;
+html {
+  background-color: #AFF4AE;
 }
-.container .userEntry .playerAddBtn {
+html .container .logoBox {
+  margin: 10px;
+  display: flex;
+  font-family: 'Shadows Into Light', cursive;
+}
+html .container .logoBox .logo {
+  height: 100px;
+}
+html .container .userEntry .playerAddBtn {
   height: 20px;
   width: 30px;
   background-color: green;
   cursor: pointer;
 }
-.container .card {
+html .container .card {
   display: flex;
 }
-.container .card .right {
-  display: flex;
+html .container .card .left {
+  width: 125px;
+  margin-top: 50px;
 }
-.container .card .right .column {
+html .container .card .left .playerLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+}
+html .container .card .left .playerLabel .trashPlayer {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+html .container .card .right {
+  display: flex;
+  background-color: white;
+}
+html .container .card .right .column {
   border: 1px solid green;
-  padding: 10px;
+}
+html .container .card .right .column .colHeader {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 3px solid green;
+}
+html .container .card .right .column .colScores {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Shadows Into Light', cursive;
+  border-bottom: 1px solid green;
+}
+html .container .card .right .scoreCol {
+  width: 50px;
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+html .container .card .right .scoreCol .scoreColHead {
+  height: 50px;
+  border-bottom: 3px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+html .container .card .right .scoreCol .total {
+  height: 50px;
+  border-bottom: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
