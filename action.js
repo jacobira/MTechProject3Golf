@@ -96,7 +96,9 @@ function deletePlayer(playerToTrash, playerNum){
     $(playerToTrash).remove();
     for (let i = 1; i <= golfHoles.length; i++){
         $("#score" + playerNum + "-" + i +"").remove();
-        $("#total" + playerNum + "").remove();
+        $("#inTotal" + playerNum + "").remove();
+        $("#outTotal" + playerNum + "").remove();
+        $("#gameTotal" + playerNum + "").remove();
     }
     numPlayers--;
     console.log("Player removed. Current number of players:"+numPlayers+"");
