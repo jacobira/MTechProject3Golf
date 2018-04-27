@@ -1,78 +1,117 @@
 html {
   background-color: #AFF4AE;
+  padding: 0;
 }
-html .container .logoBox {
-  margin: 10px;
+html body {
+  margin: 0;
+}
+html body .container .logoBox {
+  padding: 10px;
   display: flex;
+  margin-bottom: 20px;
   font-family: 'Shadows Into Light', cursive;
 }
-html .container .logoBox .logo {
+html body .container .logoBox .logo {
   height: 100px;
 }
-html .container .userEntry .playerAddBtn {
+html body .container .userEntry {
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+html body .container .userEntry .playerAddBtn {
   height: 20px;
-  width: 30px;
-  background-color: green;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid black;
+  background-color: lightgray;
   cursor: pointer;
 }
-html .container .card {
+html body .container .card {
   display: flex;
+  margin-left: 10px;
 }
-html .container .card .left {
+html body .container .card .left {
   width: 125px;
-  margin-top: 50px;
+  margin-top: 120px;
 }
-html .container .card .left .playerLabel {
+html body .container .card .left .playerLabel {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100px;
   height: 50px;
 }
-html .container .card .left .playerLabel .trashPlayer {
+html body .container .card .left .playerLabel .trashPlayer {
   height: 20px;
   width: 20px;
   cursor: pointer;
 }
-html .container .card .right {
+html body .container .card .right {
   display: flex;
   background-color: white;
 }
-html .container .card .right .column {
+html body .container .card .right .column {
   border: 1px solid green;
 }
-html .container .card .right .column .colHeader {
-  height: 50px;
+html body .container .card .right .column .colHeader {
   width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-weight: bold;
   border-bottom: 3px solid green;
 }
-html .container .card .right .column .colScores {
+html body .container .card .right .column .colHeader .holeNum {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px solid green;
+}
+html body .container .card .right .column .colHeader .parInfo .par {
+  height: 30px;
+  font-size: 14px;
+}
+html body .container .card .right .column .colHeader .parInfo .yardage {
+  height: 30px;
+  font-size: 12px;
+}
+html body .container .card .right .column .colScores {
   height: 50px;
   width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
   border-bottom: 1px solid green;
 }
-html .container .card .right .scoreCol {
+html body .container .card .right .scoreCol {
   width: 50px;
   border: 1px solid green;
   background-color: lightgreen;
 }
-html .container .card .right .scoreCol .scoreColHead {
-  height: 50px;
+html body .container .card .right .scoreCol .scoreColHead {
   border-bottom: 3px solid green;
+}
+html body .container .card .right .scoreCol .scoreColHead .scoreColLabel {
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  border-bottom: 1px solid green;
 }
-html .container .card .right .scoreCol .total {
+html body .container .card .right .scoreCol .scoreColHead .scoreColParTotal {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 10px;
+}
+html body .container .card .right .scoreCol .total {
   height: 50px;
   border-bottom: 1px solid green;
   display: flex;

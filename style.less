@@ -1,100 +1,138 @@
 html {
   background-color: #AFF4AE;
+  padding: 0;
 
-  .container {
-    .logoBox {
-      margin: 10px;
-      display: flex;
-      font-family: 'Shadows Into Light', cursive;
+  body {
+    margin: 0;
 
+    .container {
 
-      .logo {
-        height: 100px;
-      }
-
-    }
-    .userEntry {
-
-      .playersEntry {
-
-      }
-
-      .playerAddBtn {
-        height: 20px;
-        width: 30px;
-        background-color: green;
-        cursor: pointer;
-      }
-    }
-    .card {
-      display: flex;
-
-      .left {
-        width: 125px;
-        margin-top: 50px;
-
-        .playerLabel {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100px;
-          height: 50px;
-
-          .playerName {
-
-          }
-          .trashPlayer {
-            height: 20px;
-            width: 20px;
-            cursor: pointer;
-          }
-        }
-      }
-      .right {
+      .logoBox {
+        padding: 10px;
         display: flex;
-        background-color: white;
+        margin-bottom: 20px;
+        font-family: 'Shadows Into Light', cursive;
 
-        .column {
-          border: 1px solid green;
-          .colHeader {
-            height: 50px;
-            width: 50px;
+        .logo {
+          height: 100px;
+        }
+
+      }
+      .userEntry {
+        margin-left: 10px;
+        margin-bottom: 30px;
+
+        .playerAddBtn {
+          height: 20px;
+          width: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px;
+          border: 1px solid black;
+          background-color: lightgray;
+          cursor: pointer;
+        }
+      }
+      .card {
+        display: flex;
+        margin-left: 10px;
+
+        .left {
+          width: 125px;
+          margin-top: 120px;
+
+          .playerLabel {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            font-weight: bold;
-            border-bottom: 3px solid green;
-          }
-          .colScores {
+            width: 100px;
             height: 50px;
-            width: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Shadows Into Light', cursive;
-            border-bottom: 1px solid green;
+
+            .playerName {
+
+            }
+            .trashPlayer {
+              height: 20px;
+              width: 20px;
+              cursor: pointer;
+            }
           }
         }
-        .scoreCol {
-          width: 50px;
-          border: 1px solid green;
-          background-color: lightgreen;
+        .right {
+          display: flex;
+          background-color: white;
 
-          .scoreColHead {
-            height: 50px;
-            border-bottom: 3px solid green;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
+          .column {
+            border: 1px solid green;
+            .colHeader {
+              width: 50px;
+              font-weight: bold;
+              border-bottom: 3px solid green;
+
+              .holeNum {
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                border-bottom: 1px solid green;
+              }
+              .parInfo {
+                .par {
+                  height: 30px;
+                  font-size: 14px;
+                }
+                .yardage {
+                  height: 30px;
+                  font-size: 12px;
+                }
+              }
+            }
+            .colScores {
+              height: 50px;
+              width: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: 'Shadows Into Light', cursive;
+              font-size: 20px;
+              border-bottom: 1px solid green;
+            }
           }
-          .total {
-            height: 50px;
-            border-bottom: 1px solid green;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
+          .scoreCol {
+            width: 50px;
+            border: 1px solid green;
+            background-color: lightgreen;
+
+            .scoreColHead {
+              border-bottom: 3px solid green;
+
+              .scoreColLabel {
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                border-bottom: 1px solid green;
+              }
+              .scoreColParTotal {
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 10px;
+              }
+            }
+            .total {
+              height: 50px;
+              border-bottom: 1px solid green;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: bold;
+            }
           }
         }
       }
