@@ -2,18 +2,23 @@
 let numPlayers = prompt("How many players for today's tee time?");
 let numPlayersUsed = 0;
 let golfHoles = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+let selectedCourse;
+let selectedTee;
 
 
-createCard();
-loadPlayers();
+
+loadDoc();
 
 function createCard(){
+    //need to clear any data currently in the divs being printed to before any more printing.
+    //loadPlayers should only happen once.
+
     for (let i = 0; i < 9; i++){
         $(".right").append("<div id='col" + (i + 1) +"' class='column'>" +
             "<div class='colHeader'>" +
             "<div class='holeNum'>" + (i + 1) + "</div>" +
             "<div class='parInfo' id='parInfo" + (i + 1) + "'>" +
-            "<div class='par' id='par-" + i + "'>PAR</div>" +
+            "<div class='par' id='par-" + i + "'>PAR "+ selectedCourse.data.holes[i].teeBoxes[selectedTee].par +"</div>" +
             "<div class='yardage'>YDG:</div>" +
             "</div>" +
             "</div>" +
@@ -31,7 +36,7 @@ function createCard(){
             "<div class='colHeader'>" +
             "<div class='holeNum'>" + (i + 1) + "</div>" +
             "<div class='parInfo' id='parInfo" + (i + 1) + "'>" +
-            "<div class='par' id='par-" + i + "'>PAR</div>" +
+            "<div class='par' id='par-" + i + "'>PAR"+ selectedCourse.data.holes[i].teeBoxes[selectedTee].par +"</div>" +
             "<div class='yardage'>YDG:</div>" +
             "</div>" +
             "</div>" +
@@ -110,13 +115,13 @@ function scoreTotals(player){
     let outScore = 0;
 
 
-    for (let i = 0; i < 9; i++){
+    for (let i = 1; i < 10; i++){
         let scoreInq = Number($("#score" + player + "-" + i + "").html());
         if(isNaN(scoreInq) === false) {
             inScore =  scoreInq + inScore;
         }
     }
-    for (let i = 9; i < 18; i++){
+    for (let i = 10; i < 19; i++){
         let scoreInq = Number($("#score" + player + "-" + i + "").html());
         if(isNaN(scoreInq) === false) {
             outScore =  scoreInq + outScore;
@@ -129,11 +134,43 @@ function scoreTotals(player){
 
 }
 
-function getCourseInfo(){
+
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let myCourses = JSON.parse(this.responseText);
+            console.log(myCourses);
+            for(let i = 0; i < myCourses.courses.length; i++){
+                $("#selID").append("<option value='"+ myCourses.courses[i].id +"'>"+ myCourses.courses[i].name +"</option>")
+            }
+        }
+    };
+    xhttp.open("GET", "https://uxcobra.com/golfapi/courses.txt", true);
+    xhttp.send();
+}
+
+function getCourse(courseId) {
+    $("#teeBoxSel").html("");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            selectedCourse = JSON.parse(this.responseText);
+            console.log(selectedCourse);
+            let tees = selectedCourse.data.holes[0].teeBoxes;
+            for(let i = 0; i < tees.length; i++){
+                $("#teeBoxSel").append("<option value='"+ i +"'>"+ tees[i].teeType +"</option>")
+            }
+        }
+    };
+    xhttp.open("GET", "https://uxcobra.com/golfapi/course"+ courseId +".txt", true);
+    xhttp.send();
 
 }
 
-function getHoleInfo(course){
-
+function setTee(teeIndex){
+    selectedTee = teeIndex;
+    createCard();
+    loadPlayers();
 }
 
