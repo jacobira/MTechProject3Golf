@@ -8,6 +8,7 @@ html body {
 html body .container .logoBox {
   padding: 10px;
   display: flex;
+  align-items: center;
   margin-bottom: 20px;
   font-family: 'Shadows Into Light', cursive;
 }
