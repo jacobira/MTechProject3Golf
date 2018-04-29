@@ -12,6 +12,8 @@ loadDoc();
 function createCard(){
     //need to clear any data currently in the divs being printed to before any more printing.
     //loadPlayers should only happen once.
+    $(".right").html("");
+    $(".left").html("");
 
     for (let i = 0; i < 9; i++){
         $(".right").append("<div id='col" + (i + 1) +"' class='column'>" +
@@ -19,7 +21,7 @@ function createCard(){
             "<div class='holeNum'>" + (i + 1) + "</div>" +
             "<div class='parInfo' id='parInfo" + (i + 1) + "'>" +
             "<div class='par' id='par-" + i + "'>PAR "+ selectedCourse.data.holes[i].teeBoxes[selectedTee].par +"</div>" +
-            "<div class='yardage'>YDG:</div>" +
+            "<div class='yardage'>YDG: "+ selectedCourse.data.holes[i].teeBoxes[selectedTee].yards +"</div>" +
             "</div>" +
             "</div>" +
             "</div>");
@@ -27,7 +29,7 @@ function createCard(){
     $(".right").append("<div class='scoreCol' id='scoreColIn'>" +
         "<div class='scoreColHead'>" +
         "<div class='scoreColLabel'>In</div>" +
-        "<div class='scoreColParTotal'>TOTAL PAR:</div>" +
+        "<div class='scoreColParTotal'></div>" +
         "</div>" +
         "</div>");
 
@@ -36,8 +38,8 @@ function createCard(){
             "<div class='colHeader'>" +
             "<div class='holeNum'>" + (i + 1) + "</div>" +
             "<div class='parInfo' id='parInfo" + (i + 1) + "'>" +
-            "<div class='par' id='par-" + i + "'>PAR"+ selectedCourse.data.holes[i].teeBoxes[selectedTee].par +"</div>" +
-            "<div class='yardage'>YDG:</div>" +
+            "<div class='par' id='par-" + i + "'>PAR "+ selectedCourse.data.holes[i].teeBoxes[selectedTee].par +"</div>" +
+            "<div class='yardage'>YDG: "+ selectedCourse.data.holes[i].teeBoxes[selectedTee].yards +"</div>" +
             "</div>" +
             "</div>" +
             "</div>");
@@ -45,13 +47,13 @@ function createCard(){
     $(".right").append("<div class='scoreCol' id='scoreColOut'>" +
         "<div class='scoreColHead'>" +
         "<div class='scoreColLabel'>Out</div>" +
-        "<div class='scoreColParTotal'>TOTAL PAR:</div>" +
+        "<div class='scoreColParTotal'></div>" +
         "</div>" +
         "</div>");
     $(".right").append("<div class='scoreCol' id='scoreColTotals'>" +
         "<div class='scoreColHead'>" +
         "<div class='scoreColLabel'>Totals</div>" +
-        "<div class='scoreColParTotal'>COURSE TOTAL PAR:</div>" +
+        "<div class='scoreColParTotal'></div>" +
         "</div>" +
         "</div>");
     console.log("Scorecard created")
